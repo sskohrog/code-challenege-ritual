@@ -5,7 +5,7 @@ import { IngredientsListContext } from '../global/IngredientsListContext'
 import './About.scss'
 
 function AboutContainer() {
-  let { selectedItem } = useContext(IngredientsListContext)
+  let { selectedItem, deleteIngredient } = useContext(IngredientsListContext)
   const [selectedCarouselItem, setSelectedCarouselItem] = useState(0)
 
   useEffect(() => setSelectedCarouselItem(0), [selectedItem])
@@ -21,7 +21,15 @@ function AboutContainer() {
             />
           </div>
           <div className='col-5 title'>
-            <h1 className='ingred'>{selectedItem.name}</h1>
+            <h1 className='ingred'>
+              {selectedItem.name}
+              <b
+                className='delete-btn ml-4'
+                onClick={() => deleteIngredient(selectedItem.id)}
+              >
+                Delete
+              </b>
+            </h1>
             <p className='dosage'>{selectedItem.dosage}</p>
           </div>
         </div>

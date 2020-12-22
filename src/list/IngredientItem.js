@@ -13,7 +13,9 @@ function IngredientItem({ item }) {
     >
       <div className='row'>
         <div className='col-10'>
-          <h3 className='ingredient-name'>{item.name}</h3>
+          <h3 className='ingredient-name'>
+            {item.name}
+          </h3>
           <p className='dosage'>{item.dosage}</p>
           <p className='location'>
             {item.selected ? (

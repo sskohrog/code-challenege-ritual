@@ -1,6 +1,7 @@
 @import '../_variables.scss';
 
 .ingredient-item {
+  cursor: pointer;
   .ingredient-name {
     font-weight: bold;
     margin-bottom: 0;

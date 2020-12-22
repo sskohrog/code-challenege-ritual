@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import _cloneDeep from 'lodash/cloneDeep'
 import mockingredientslist from '../data/ingredients.json'
+import { isTypedArray } from 'lodash'
 
 const IngredientsListContext = React.createContext(null)
 
@@ -32,12 +33,18 @@ function IngredientsListProvider({ children }) {
     setIngredientsList(list)
   }
 
+  const deleteIngredient = (id) => {
+    setSelectedItem(null)
+    setIngredientsList((list) => list.filter((i) => i.id !== id))
+  }
+
   return (
     <IngredientsListContext.Provider
       value={{
         ingredientsList,
         selectedItem,
         selectItem,
+        deleteIngredient,
       }}
     >
       {children}

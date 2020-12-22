@@ -15,6 +15,11 @@
       display: flex;
       justify-content: center;
       flex-flow: column;
+      .delete-btn {
+        font-size: 0.6rem;
+        color: red;
+        cursor: pointer;
+      }
     }
   }
   .ingredient-info {
